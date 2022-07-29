@@ -17,7 +17,7 @@ experience with a standard programming background to write 8 bit games with ease
 # Features
 This will be left blank until there are features to list
 
-Made using FXGL, a Game Development framework used to develop games. This software is under the MIT license which allows for use and redistribution. See below.
+Made using FXGL, a Game Development framework. This software is under the MIT license which allows for use and redistribution. See below.
 
 What are the MIT license terms and conditions?
 
