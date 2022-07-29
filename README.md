@@ -5,9 +5,13 @@ experience with a standard programming background to write 8 bit games with ease
 
 # People
   Nathan (discordId: ogsnapple#5806), Project Manager
+  
   Leo (discordId: Leo-li#8666), Project Coordinator
+  
   Jesse (discordId: Orideus#0152), Project Lead
+  
   Noah (me) (discordId: INoaahGuy#2536), Project SpearHeader
+  
    (discordId: botbot#4371), Project Contributor
 
 # Features
