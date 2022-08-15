@@ -18,6 +18,10 @@ public class SpriteWindow extends Application {
         launch(args);
     }
 
+    //start
+    //desc:
+    //parameters: stage
+    //  stage: an Stage object used for...
     @Override
     public void start(Stage stage) throws Exception {
         stage.setTitle("Sprite Editor");
@@ -29,6 +33,9 @@ public class SpriteWindow extends Application {
         System.out.println(canvasSize);
     }
 
+    //getCanvas
+    //desc:
+    //parameters: none
     private int getCanvas() {
         Label errorLabel = new Label();
         Label sizeLabel1 = new Label("Width: ");
@@ -46,7 +53,10 @@ public class SpriteWindow extends Application {
                 height = Integer.parseInt(sizeField2.getText());
             } catch (InputMismatchException e) {
                 errorLabel.setText("Sorry that input was invalid, please try again");
+            } catch (Exception e){              //so that all other kind of unexpected exception are handled.
+                errorLabel.setText("Unexpected error, please contact your admin with this information: \n" + e);
             }
         });
+        return 0;                               //TODO: this is just a temporary return to make the function work, change this later if needed when this function is completed.
     }
 }
