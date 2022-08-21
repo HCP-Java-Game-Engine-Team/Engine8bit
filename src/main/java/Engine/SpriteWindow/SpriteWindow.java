@@ -19,9 +19,9 @@ public class SpriteWindow extends Application {
     }
 
     //start
-    //desc:
+    //desc: Open a window for sprite editing
     //parameters: stage
-    //  stage: an Stage object used for...
+    //  stage: a Stage object used for declaring structure of a window
     @Override
     public void start(Stage stage) throws Exception {
         stage.setTitle("Sprite Editor");
@@ -34,7 +34,7 @@ public class SpriteWindow extends Application {
     }
 
     //getCanvas
-    //desc:
+    //desc: A method that retrieves the number of Pixels wanted from the user. This will be the length of the Pixel array
     //parameters: none
     private int getCanvas() {
         Label errorLabel = new Label();
