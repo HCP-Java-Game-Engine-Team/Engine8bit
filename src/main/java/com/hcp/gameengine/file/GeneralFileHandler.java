@@ -120,22 +120,26 @@ public class GeneralFileHandler {
         try {
             // Get the doc
             File inFile = new File(filePath);
-            SAXBuilder saxBuilder = new SAXBuilder();
-            Document document = saxBuilder.build(inFile);
+            if (!inFile.exists()) {
+                return constructBaseConfig();
+            } else {
+                SAXBuilder saxBuilder = new SAXBuilder();
+                Document document = saxBuilder.build(inFile);
 
-            // Get the root element, in our case "BaseWindow"
-            Element rootElement = document.getRootElement();
-            List<Element> subWindows = rootElement.getChildren();
+                // Get the root element, in our case "BaseWindow"
+                Element rootElement = document.getRootElement();
+                List<Element> subWindows = rootElement.getChildren();
 
-            for (Element e : subWindows) {
-                String type = e.getChild("Type").getText();
-                int height = Integer.parseInt(e.getChild("Height").getValue());
-                int width = Integer.parseInt(e.getChild("Width").getValue());
-                int xPos = Integer.parseInt(e.getChild("xPosition").getValue());
-                int yPos = Integer.parseInt(e.getChild("yPosition").getValue());
+                for (Element e : subWindows) {
+                    String type = e.getChild("Type").getText();
+                    int height = Integer.parseInt(e.getChild("Height").getValue());
+                    int width = Integer.parseInt(e.getChild("Width").getValue());
+                    int xPos = Integer.parseInt(e.getChild("xPosition").getValue());
+                    int yPos = Integer.parseInt(e.getChild("yPosition").getValue());
 
-                // Add to the root
-                //Todo: Figure out how to add to the root
+                    // Add to the root
+                    //Todo: Figure out how to add to the root
+                }
             }
         } catch (Exception e) {
             e.printStackTrace();
