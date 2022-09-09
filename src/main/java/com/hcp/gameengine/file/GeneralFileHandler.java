@@ -1,6 +1,15 @@
 package com.hcp.gameengine.file;
 
+import javafx.scene.Group;
+import org.jdom2.Document;
+import org.jdom2.Element;
+import org.jdom2.input.SAXBuilder;
+
 import java.io.*;
+import java.util.List;
+
+
+
 
 /* Created by: Jesse
  * Create Datetime: 09/05/2022 02:26 P.M.
@@ -99,6 +108,40 @@ public class GeneralFileHandler {
             filePath += fileName;                                   //put file path and filename together
         }
         return filePath;
+    }
+
+    //  configParser
+    //  desc: A method that parses XML from the config file and returns a group of subWindows
+    //  params: filePath
+    //      filePath: Path to the XML document
+    public Group configParser(String filePath) {
+        Group root = new Group();
+
+        try {
+            // Get the doc
+            File inFile = new File(filePath);
+            SAXBuilder saxBuilder = new SAXBuilder();
+            Document document = saxBuilder.build(inFile);
+
+            // Get the root element, in our case "BaseWindow"
+            Element rootElement = document.getRootElement();
+            List<Element> subWindows = rootElement.getChildren();
+
+            for (Element e : subWindows) {
+                String type = e.getChild("Type").getText();
+                int height = Integer.parseInt(e.getChild("Height").getValue());
+                int width = Integer.parseInt(e.getChild("Width").getValue());
+                int xPos = Integer.parseInt(e.getChild("xPosition").getValue());
+                int yPos = Integer.parseInt(e.getChild("yPosition").getValue());
+
+                // Add to the root
+                //Todo: Figure out how to add to the root
+            }
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+
+        return root;
     }
 
 
